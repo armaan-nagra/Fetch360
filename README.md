@@ -33,10 +33,6 @@ Flow:
 
 `host_permissions` is limited to `*://content.echo360.org.uk/*` for least-privilege.
 
-## Security and CSP
-
-Manifest V3 service worker runs in an isolated context. Extension pages allow `'wasm-unsafe-eval'` to enable `ffmpeg.wasm`. No remote code is executed.
-
 ## Developer notes
 
 - Media tracking per tab: stored in-memory with a mirrored `chrome.storage.local` entry keyed as `media:<tabId>`.
