@@ -2,7 +2,7 @@ body {
   background-color: #2E2E2E;
   color: #eee;
   width: 12rem;
-  height: 5rem;
+  min-height: 6rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,6 +25,7 @@ h3 {
 #progress-bar {
   display: none;
   color: black;
+  width: 100%;
 }
 
 @font-face {
@@ -59,6 +60,11 @@ button {
   color: currentColor;
   user-select: none;
   -webkit-appearance: none;
+}
+
+button[disabled] {
+  cursor: not-allowed;
+  opacity: 0.7;
 }
 
 .btn__text {

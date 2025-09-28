@@ -14,31 +14,18 @@
         "default_popup": "popup/popup.html"
     },
     "host_permissions": [
-        "<all_urls>"
+        "*://content.echo360.org.uk/*"
     ],
     "permissions": [
         "webRequest",
-        "downloads",
         "storage",
-        "unlimitedStorage",
         "scripting",
         "activeTab"
     ],
     "background": {
         "service_worker": "service-worker.js"
     },
-    "content_scripts": [
-        {
-            "matches": [
-                "<all_urls>"
-            ],
-            "js": [
-                "libs/ffmpeg.min.js",
-                "libs/ffmpeg-core.js",
-                "popup/popup.js"
-            ]
-        }
-    ],
+    
     "web_accessible_resources": [
         {
             "resources": [
@@ -51,7 +38,6 @@
         }
     ],
     "content_security_policy": {
-        "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';",
-        "sandbox": "sandbox allow-scripts allow-forms allow-popups allow-modals; script-src 'self' 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval'; child-src 'self';"
+        "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
     }
 }

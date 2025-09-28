@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="popup.css">
     <title>Warwick Lecture Downloader</title>
 </head>
 <body>
-    <div class="container">
-        <button id="download" class="btn">
+    <div class="container" role="region" aria-label="Fetch360">
+        <button id="download" class="btn" aria-live="polite">
             <span class="btn__inner">
               <span class="btn__text">Download</span>
             </span>
         </button>
-        <p id="status"></p>
-        <progress id="progress-bar" value="0" max="100"></progress>
+        <p id="status" aria-live="polite"></p>
+        <progress id="progress-bar" value="0" max="100" aria-label="Download progress"></progress>
     </div>
     <script src="../libs/ffmpeg.min.js"></script>
     <script src="../libs/ffmpeg-core.js"></script>
