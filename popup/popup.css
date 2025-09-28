@@ -18,10 +18,6 @@ body {
   text-align: center;
 }
 
-h3 {
-  text-align: center;
-}
-
 #progress-bar {
   display: none;
   color: black;
@@ -147,5 +143,3 @@ button[disabled] {
   font-size: var(--btn-font-size);
   font-family: "CustomFont", sans-serif;
 }
-
-/*# sourceMappingURL=popup.css.map */

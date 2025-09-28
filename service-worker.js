@@ -1,9 +1,7 @@
 // Service worker (MV3) - tracks latest audio/video URLs per tab and exposes a messaging API
 
-/**
- * In-memory map: tabId -> { audioUrl?: string, videoUrl?: string, updatedAt: number }
- * We also mirror to storage for resilience across SW restarts.
- */
+//In memory map: tabId -> { audioUrl?: string, videoUrl?: string, updatedAt: number }
+
 const tabIdToMedia = new Map();
 
 function persistTabMedia(tabId) {
@@ -67,7 +65,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         // Fallback to persisted storage if SW restarted
         const key = `media:${tabId}`;
         chrome.storage.local.get([key], (res) => { //async function hence why we need to keep channel open 
-            const stored = res[key] || null;
+            const stored = res[key] || null; //chrome returns a dictionary of key-value pairs given the keys in the array
             if (stored && stored.audioUrl && stored.videoUrl) {
                 tabIdToMedia.set(tabId, stored);
                 sendResponse({ ok: true, media: stored });
